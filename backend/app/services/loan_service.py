@@ -51,3 +51,6 @@ def delete_loan(db: Session, loan_id: int):
 
     if loan:
         db.delete(loan)
+        db.commit()
+        return True
+    return False

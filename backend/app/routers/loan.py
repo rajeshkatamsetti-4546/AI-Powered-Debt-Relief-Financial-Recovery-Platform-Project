@@ -68,7 +68,7 @@ def remove_loan(
 ):
     deleted_loan = delete_loan(db, loan_id)
 
-    if deleted_loan is None:
+    if not deleted_loan:
         raise HTTPException(
             status_code=404,
             detail="Loan not found"
